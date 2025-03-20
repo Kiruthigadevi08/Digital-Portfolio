@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kiruthiga - AI Enthusiast & Computer Science Student Portfolio" />
+  <meta name="author" content="Kiruthiga" />
+  <title>Kiruthiga Devi | AI Enthusiast & CS Student</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+nav a {
+  position: relative; /* Needed for the underline effect */
+  color: #000000;
+  font-weight: 600;
+  padding: 2px 4px;
+  text-decoration: none; /* Removes default underline */
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 5px; /* Thickness of the underline */
+  background-color: #c77dff;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+
+
+    /* Header (Home) Section */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 160px 20px 50px;
+      text-align: center;
+      background: #fff;
+    }
+
+    header .profile-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    header img {
+      width: 350px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px #023e8a
+    }
+
+    header .intro {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #023e8a;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin: 20px 0;
+    }
+
+    .btn-download {
+      background-color: #023e8a;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background 0.3s;
+      box-shadow: 0 8px 20px #023e8a;
+      display: inline-block;
+    }
+
+    .btn-download:hover {
+      background-color: #0096c7;
+      box-shadow: 0 8px 20px #0096c7;
+    }
+
+    section {
+      background: #fff;
+      width: 90%;
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #023e8a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      color: #555;
+      text-align: justify;
+    }
+
+    /* Projects */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-item {
+      background-color: #023e8a;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px #023e8a;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .project-desc {
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    label {
+      font-weight: 600;
+      color: #023e8a;
+      text-align: left;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #023e8a;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 8px 20px #023e8a;
+    }
+
+    button:hover {
+      background-color: #0096c7;
+      box-shadow: 0 8px 20px #0096c7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding-top: 120px;
+      }
+
+      header img {
+        width: 200px;
+        height: 260px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- Home Section -->
+  <header id="home">
+    <div class="profile-img">
+      <img src="profile.jpg" alt="Profile Photo of Kiruthiga Devi" />
+    </div>
+    <div class="intro">
+      <h1>Kiruthiga Devi</h1>
+      <p>AI Enthusiast & Computer Science Student</p>
+      <a href="Kiruthiga Devi.Resume.pdf" class="btn-download" target="_blank" aria-label="Resume">Resume</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Kiruthiga Devi RS, a dedicated and passionate student currently pursuing a degree in Artificial Intelligence, I’m committed to exploring cutting-edge technologies and their applications. With a strong foundation in programming and data analysis, I’m eager to contribute to innovative AI solutions that enhance lives and drive efficiency.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-item">
+        <div class="Milky Way Galaxy Explorer"></div>
+        <div class="project-desc">A fun and interactive website where users can explore the planets of our solar system!</div>
+        <a href="PPROJECT/index.html" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Kiruthiga. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for Active Links -->
+  <script>
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSection)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
